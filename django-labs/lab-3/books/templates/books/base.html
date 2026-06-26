@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookstore</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f8;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        width: 80%;
+        margin: auto;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+        background: #007bff;
+        padding: 6px 10px;
+        border-radius: 5px;
+        margin-right: 5px;
+      }
+
+      a:hover {
+        background: #0056b3;
+      }
+
+      .card {
+        background: white;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      input {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0 15px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      button {
+        background: green;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: darkgreen;
+      }
+
+      .danger {
+        background: red;
+      }
+
+      .danger:hover {
+        background: darkred;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">{% block content %} {% endblock %}</div>
+  </body>
+</html>

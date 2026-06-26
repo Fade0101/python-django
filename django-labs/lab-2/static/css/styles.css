@@ -1,0 +1,128 @@
+/* Reset & Global Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    padding: 40px;
+    line-height: 1.6;
+}
+
+/* Container & Header */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+    margin-bottom: 30px;
+}
+
+/* Grid Layout for Book Cards */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+/* Custom Styled Book Cards */
+.book-card {
+    background: #fafbfc;
+    border: 1px solid #e1e8ed;
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.book-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.book-title {
+    font-size: 1.25rem;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.book-meta {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 15px;
+}
+
+.badge {
+    background: #f1f5f9;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #475569;
+}
+
+/* Buttons and Interactivity */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    transition: background 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2563eb;
+}
+
+.btn-secondary {
+    background-color: #f1f5f9;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+}
+
+.btn-secondary:hover {
+    background-color: #e2e8f0;
+}
+
+/* Empty State Styling */
+.no-books {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    color: #94a3b8;
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+}

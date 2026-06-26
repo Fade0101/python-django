@@ -1,0 +1,17 @@
+{% extends 'books/base.html' %} {% block content %}
+
+<h1>📚 Books</h1>
+
+<a href="/books/create">+ Add Book</a>
+
+{% for book in books %}
+<div class="card">
+  <h3>{{ book.title }}</h3>
+  <p>Author: {{ book.author }}</p>
+  <p>Price: ${{ book.price }}</p>
+
+  <a href="/books/{{ book.id }}">Show</a>
+  <a href="/books/{{ book.id }}/edit">Edit</a>
+  <a href="/books/{{ book.id }}/delete" class="danger">Delete</a>
+</div>
+{% endfor %} {% endblock %}

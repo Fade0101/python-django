@@ -1,0 +1,60 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Store</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <form action="{% url 'logout' %}" method="post" style="display: inline">
+        {% csrf_token %}
+        <button
+          type="submit"
+          class="btn btn-danger"
+          style="
+            background: none;
+            border: none;
+            color: #dc2626;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: inherit;
+            padding: 0;
+          "
+        >
+          Logout
+        </button>
+      </form>
+      <h1>
+        <span>📚 Welcome to the Bookstore</span>
+        <a href="/books/create/" class="btn btn-primary" style="font-size: 1rem"
+          >+ Add New Book</a
+        >
+      </h1>
+      <hr />
+
+      <ul class="book-grid">
+        {% for book in books %}
+        <li class="book-card">
+          <div>
+            <h2 class="book-title">{{ book.title }}</h2>
+            <div class="book-meta">
+              <span class="badge">⭐ {{ book.rate }}/5</span> &nbsp;
+              <span>👁️ {{ book.views }} views</span>
+            </div>
+          </div>
+          <a href="/books/{{ book.id }}/" class="btn btn-secondary"
+            >View Details</a
+          >
+        </li>
+        {% empty %}
+        <li class="no-books">
+          <p>No books found in the database. Start by adding one above!</p>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>
